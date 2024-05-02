@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Check Results</title>
+</head>
+<body>
+    <h1>Security Check Results for {{ url }}</h1>
+    {% for category, result_list in results.items() %}
+    <h2>{{ category }}</h2>
+    <ul>
+        {% for result in result_list %}
+        <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</body>
+</html>
+
+
+
+<!-- Output:
+
+Security Check Results for https://programmator-java.blogspot.com/
+sql injection scan
+No SQL injection attack vulnerability detected
+No SQL injection attack vulnerability detected
+open port scan
+Scanning open ports on programmator-java.blogspot.com...
+Port 80: Open
+Port 443: Open
+host_details
+Getting host details for programmator-java.blogspot.com...
+Host IP: 142.250.192.97
+Host Name: bom12s17-in-f1.1e100.net
+robots_txt
+robots.txt exists. Checking for disallowed paths...
+Disallowed paths:
+/nogooglebot/
+/wp-admin/
+/search
+/tag/
+/cgi-bin/
+/scripts/
+/tmp/
+technology_details
+Server: GSE
+security_headers
+Missing X-Frame-Options header.
+All required security headers present.
+cookies
+No cookies found. -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results</title>
+</head>
+<body>
+    <h2>Scan Results for {{ url }}</h2>
+    <h3>SQL Injection Scan:</h3>
+    <p>{{ sql_scan_result }}</p>
+    <h3>Open Port Scan:</h3>
+    <p>{{ open_port_scan_result }}</p>
+    <h3>Host Details:</h3>
+    <p>{{ host_details_result }}</p>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results</title>
+</head>
+<body>
+    <h1>Scan Results</h1>
+    <p>SQL Injection Vulnerabilities: {{ sql_vulnerabilities }}</p>
+    <p>Open Ports: {{ open_ports }}</p>
+    <p>Host Details: {{ host_details }}</p>
+    <p>Disallowed Paths in robots.txt: {{ disallowed_paths }}</p>
+    <p>Technology Details: {{ technology_details }}</p>
+    <p>Missing Security Headers: {{ missing_security_headers }}</p>
+    <p>Cookies: {{ cookies }}</p>
+</body>
+</html> -->
